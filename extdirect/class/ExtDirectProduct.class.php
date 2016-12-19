@@ -844,7 +844,7 @@ class ExtDirectProduct extends Product
                         $sql .= "c.rowid = ".$value;
                     } else if ($filter->property == 'content') {
                         $contentValue = strtolower($value);
-                        $sql.= " (LOWER(p.ref) like '%".$contentValue."%' OR LOWER(p.label) like '%".$contentValue."%'";
+                        $sql.= " (LOWER(p.ref) like '%".$contentValue."%' OR LOWER(p.label) like '%".$contentValue."%' OR LOWER(p.note) like '%".$contentValue."%'";
                         $sql.= " OR LOWER(p.barcode) like '%".$contentValue."%')" ;
                     } else if ($filter->property == 'complete' && !empty($value)) {
                         $dataComplete = true;
